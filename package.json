@@ -1,8 +1,8 @@
 {
-  "name": "node_ejs_boilerplate",
-  "version": "1.0.0",
-  "description": "Boilerplate showing the use of ejs as view template engine in a Node.js application",
-  "author": "Jennifer Bland",
+  "name": "TeamPlanet",
+  "version": "0.0.1",
+  "description": "",
+  "author": "Umar Shaik",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -22,6 +22,25 @@
   "license": "MIT",
   "dependencies": {
     "ejs": "^2.4.1",
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "@fortawesome/fontawesome-free": "5.15.1",
+    "bootstrap": "4.5.3",
+    "chart.js": "2.9.4",
+    "datatables.net-bs4": "1.10.22",
+    "jquery": "3.5.1",
+    "jquery.easing": "^1.4.1"
+  },
+  "devDependencies": {
+    "browser-sync": "2.26.13",
+    "del": "6.0.0",
+    "gulp": "4.0.2",
+    "gulp-autoprefixer": "7.0.1",
+    "gulp-clean-css": "4.3.0",
+    "gulp-header": "2.0.9",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "2.0.0",
+    "gulp-sass": "4.1.0",
+    "gulp-uglify": "3.0.2",
+    "merge-stream": "2.0.0"
   }
 }

@@ -31,20 +31,30 @@
 
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Split Buttons with Icon</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Receipt Upload</h6>
                             </div>
                             <div class="card-body">
-                                <p>Works with any button colors, just use the <code>.btn-icon-split</code> class and
-                                    the markup in the examples below. The examples below also use the
-                                    <code>.text-white-50</code> helper class on the icons for additional styling,
-                                    but it is not required.</p>
-                                <a href="/parseimage" class="btn btn-primary btn-icon-split">
+
+                                <p>Last Uploaded receipt</p>
+                                <img src="/public/images/costco1.jpg" style="width: 200px; left: 50px;">
+
+
+                                <p>click the button below to upload a new receipt and view updated contents in the receipt inventory. </p>
+
+
+                                <form action="/parseimage">
+                                    <label for="fileupload"> Select a file to upload: </label>
+
+                                    <input class="btn btn-warning"type="file" name="fileupload" value="fileupload" id="fileupload">
+                                    <br/> <br/>
+
+                                    <a href="/parseimage" class="btn btn-primary btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-flag"></i>
                                         </span>
-                                    <span class="text">Split Button Primary</span>
-                                </a>
-
+                                        <span class="text">Upload File</span>
+                                    </a>
+                                </form>
                             </div>
                         </div>
 

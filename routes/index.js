@@ -134,6 +134,10 @@ module.exports = function(app) {
         res.render('pages/inventory', {Items: a});
     });
 
+    app.get('/groceryList', function(req, res) {
+        res.render('pages/grocerylist');
+    });
+
     app.get('/recipes', function(req, res) {
         res.render('pages/recipes');
     });
@@ -150,10 +154,6 @@ module.exports = function(app) {
         catch(e){
             console.log(e)
         }
-
-        // addItems([{'a': 111, 'b': 222}, {'a': 222, 'b': 333}]);
-        // console.log(getItems());
-        // removeItems([111, 444]);
     });
 
 };

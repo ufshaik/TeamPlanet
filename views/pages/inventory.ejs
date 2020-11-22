@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<% include ../partials/head %>
+
+<body id="page-top">
+
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <% include ../partials/nav %>
+
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <% include ../partials/topnav %>
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <h1 class="h3 mb-2 text-gray-800">Available Inventory</h1>
+<!--                <p class="mb-4">Current Inventory-->
+<!--                    <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>-->
+                <!-- DataTales Example -->
+                <div class="card shadow mb-4">
+<!--                    <div class="card-header py-3">-->
+<!--                        <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>-->
+<!--                    </div>-->
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Number</th>
+                                    <th>Name</th>
+                                    <th>Availability Levels</th>
+                                </tr>
+                                </thead>
+                                <tfoot>
+                                <tr>
+                                    <th></th>
+                                    <th></th>
+                                    <th> <td>
+                                        <a href="#" class="btn btn-primary btn-icon-split">
+                                            <span class="text">Add Item</span>
+                                        </a>
+                                        <a href="#" class="btn btn-danger btn-icon-split">
+                                            <span class="text">Remove Item</span>
+                                        </a>
+                                        <button type="button" class="btn btn-warning btn-icon-split"
+                                           data-toggle="modal" data-target="#exampleModalLong" >
+                                             <span class="text">Share</span>
+                                        </button>
+
+                                    </td></th>
+                                </tr>
+                                </tfoot>
+                                <tbody>
+                                <% for (var i = 0; i < Items.length;  i++) { %>
+                                    <tr>
+                                        <td><input type="checkbox" class=""></td>
+                                        <td><%= i %></td>
+                                        <td><%= Items[i].a %></td>
+                                        <td>
+                                            <% if (Items[i].a.trim() === "REDONIONS" || Items[i].a.trim() === "WILDSARDINES") { %>
+                                                <button class="btn btn-danger btn-circle btn-sm"></button>
+                                            <% } else if (Items[i].a.trim() === "BANANAS" || Items[i].a.trim() === "SOCKEYE"){ %>
+                                            <button class="btn btn-warning btn-circle btn-sm"></button>
+                                                <% } else { %>
+                                                <button class="btn btn-success btn-circle btn-sm"></button>
+                                                <% }  %>
+
+                                        </td>
+                                    </tr>
+                                <% } %>
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                        <div class="modal share-popup" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                            <div class="popup-content">
+                                <table align="center">
+                                    <tr>
+                                        <td>
+                                            <div id="share-buttons">
+                                                <table>
+                                                    <tr>
+                                                        <td>
+                                                            <figure>
+                                                                <img src="public/images/user.png"  height="25" width="25" caption="Friend A" />
+                                                                <figcaption>Umar</figcaption>
+                                                            </figure>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <figure>
+                                                                <img src="public/images/user.png"  height="25" width="25" caption="Friend A" />
+                                                                <figcaption>Musa</figcaption>
+                                                            </figure>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <figure>
+                                                                <img src="public/images/user.png"  height="25" width="25" caption="Friend A" />
+                                                                <figcaption>Bukunola</figcaption>
+                                                            </figure>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <figure>
+                                                    <img src="public/images/shelter.png"  height="170" width="170" />
+                                                    <figcaption> Donation Options </figcaption>
+                                                </figure>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table>
+                                    <tr> Make Post: </tr>
+                                    <tr>
+                                        <!-- Facebook -->
+                                        <a href="http://www.facebook.com/sharer.php?u=https://simplesharebuttons.com" target="_blank">
+                                            <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" height="25" width="25" />
+                                        </a>
+                                    </tr>
+                                    <!-- Email -->
+                                    <a href="mailto:?Subject=Simple Share Buttons&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 https://simplesharebuttons.com">
+                                        <img src="https://simplesharebuttons.com/images/somacro/email.png" alt="Email" height="25" width="25" />
+                                    </a>
+                                    <tr>
+                                        <!-- Google+ -->
+                                        <a href="https://plus.google.com/share?url=https://simplesharebuttons.com" target="_blank">
+                                            <img src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google" height="25" width="25"/>
+                                        </a>
+                                    </tr>
+                                    <!--                                    <tr>-->
+                                    <!--                                        &lt;!&ndash; Pinterest &ndash;&gt;-->
+                                    <!--                                        <a href="javascript:void((function() var e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());">-->
+                                    <!--                                            <img src="https://simplesharebuttons.com/images/somacro/pinterest.png" alt="Pinterest" height="25" width="25"/>-->
+                                    <!--                                        </a>-->
+                                    <!--                                    </tr>-->
+                                    <tr>
+                                        <!-- Reddit -->
+                                        <a href="http://reddit.com/submit?url=https://simplesharebuttons.com&amp;title=Simple Share Buttons" target="_blank">
+                                            <img src="https://simplesharebuttons.com/images/somacro/reddit.png" alt="Reddit" height="25" width="25"/>
+                                        </a>
+                                    </tr>
+                                    <tr>
+                                        <!-- Twitter -->
+                                        <a href="https://twitter.com/share?url=https://simplesharebuttons.com&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons" target="_blank">
+                                            <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" height="25" width="25"/>
+                                        </a>
+                                    </tr>
+                                </table>
+                                <br/>
+
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+
+                            </div>
+
+                        </div>
+
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- End of Main Content -->
+
+        <% include ../partials/footer %>
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
+
+
+<% include ../partials/scripts %>
+
+</body>
+
+</html>
